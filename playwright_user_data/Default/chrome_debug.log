@@ -1,5 +1,17 @@
-[0928/133320.219:INFO:CONSOLE:1] "HTML element with id ezoic-pub-ad-placeholder-106 does not exist", source: ez-standalone.js (1)
-[0928/133320.232:INFO:CONSOLE:1] "HTML element with id ezoic-pub-ad-placeholder-109 does not exist", source: ez-standalone.js (1)
-[0928/133320.233:INFO:CONSOLE:1] "HTML element with id ezoic-pub-ad-placeholder-104 does not exist", source: ez-standalone.js (1)
-[0928/133320.234:INFO:CONSOLE:1] "HTML element with id ezoic-pub-ad-placeholder-107 does not exist", source: ez-standalone.js (1)
-[0928/133320.234:INFO:CONSOLE:1] "HTML element with id ezoic-pub-ad-placeholder-108 does not exist", source: ez-standalone.js (1)
+[0928/151947.342:INFO:CONSOLE:1] "HTML element with id ezoic-pub-ad-placeholder-106 does not exist", source: ez-standalone.js (1)
+[0928/151947.351:INFO:CONSOLE:1] "HTML element with id ezoic-pub-ad-placeholder-109 does not exist", source: ez-standalone.js (1)
+[0928/151947.351:INFO:CONSOLE:1] "HTML element with id ezoic-pub-ad-placeholder-104 does not exist", source: ez-standalone.js (1)
+[0928/151947.352:INFO:CONSOLE:1] "HTML element with id ezoic-pub-ad-placeholder-107 does not exist", source: ez-standalone.js (1)
+[0928/151947.353:INFO:CONSOLE:1] "HTML element with id ezoic-pub-ad-placeholder-108 does not exist", source: ez-standalone.js (1)
+[0928/151952.629:INFO:CONSOLE:0] "Access to fetch at 'https://api.rlcdn.com/api/identity/envelope?pid=14067' from origin 'https://www.mobiledokan.co' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.", source: https://www.mobiledokan.co/products/ (0)
+[0928/151953.455:INFO:CONSOLE:16] "Called iframe: pa.openx.net  
+Number of topics:  0", source: https://pa.openx.net/topics_frame.html?bidder=openx (16)
+[0928/151953.616:INFO:CONSOLE:20] "Called iframe: ads.pubmatic.com  
+Number of topics:  0", source: https://ads.pubmatic.com/AdServer/js/topics/topics_frame.html?bidder=pubmatic (20)
+[0928/151953.617:INFO:CONSOLE:14] "Called iframe: onetag-sys.com  
+Number of topics:  0", source: https://onetag-sys.com/static/topicsapi.html?bidder=onetag (14)
+[0928/151954.227:INFO:CONSOLE:1] "Argument not defined.  [object Arguments]", source: https://g.ezoic.net/parsonsmaize/abilene.js?gcb=195-1&cb=dc112bb7ea (1)
+[0928/151954.227:INFO:CONSOLE:1] "Argument not defined.  [object Arguments]", source: https://g.ezoic.net/parsonsmaize/abilene.js?gcb=195-1&cb=dc112bb7ea (1)
+[0928/151954.228:INFO:CONSOLE:1] "Argument not defined.  [object Arguments]", source: https://g.ezoic.net/parsonsmaize/abilene.js?gcb=195-1&cb=dc112bb7ea (1)
+[0928/151954.598:INFO:CONSOLE:1] "Google Deploy of the SharedId library has been deprecated. Please select another option in the GAM UI. If you use Prebid, we suggest the Prebid.js UserId option. If you do not, you may configure GAM to allow Google to share a first party user identifier with OB and AB participants, which is either the publisherProvidedId or the __gads value when that is missing.", source: https://cdn.jsdelivr.net/gh/prebid/shared-id/pubcid.js/docs/pubcid.min.js (1)
+[0928/151955.161:INFO:CONSOLE:0] "Access to XMLHttpRequest at 'https://privacy-location-edge.ccgateway.net/privacy/location' from origin 'https://www.mobiledokan.co' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.", source: https://www.mobiledokan.co/products/ (0)
