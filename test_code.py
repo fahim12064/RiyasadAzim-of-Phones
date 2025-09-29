@@ -9,14 +9,13 @@ from PIL import Image
 from playwright.async_api import async_playwright, Playwright
 import subprocess
 
-
 # --- CONFIGURATION ---
 TARGET_URL = "https://www.mobiledokan.co/products/"
 JSON_OUTPUT_FOLDER = 'mobiles'  # Folder for JSON files
 IMAGE_OUTPUT_FOLDER = 'images'  # Folder for Image files
 PROCESSED_LINKS_CSV = 'processed_links.csv'
 HEADLESS_MODE = True
-TELEGRAM_BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN" )
+TELEGRAM_BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
 TELEGRAM_CHAT_ID = os.getenv("TELEGRAM_CHAT_ID")
 
 
@@ -77,10 +76,9 @@ def load_processed_links():
         reader = csv.reader(f)
         try:
             next(reader)
-            return {row[1] for row in reader}
+            return {row[1] for row in reader if len(row) > 1}
         except (StopIteration, IndexError):
             return set()
-
 
 
 # saving process
@@ -92,7 +90,6 @@ def save_processed_link(link, name):
         if write_header:
             writer.writerow(['mobile_name', 'processed_url'])
         writer.writerow([name, link])
-
 
 
 def sanitize_filename(name):
@@ -169,6 +166,7 @@ async def scrape_product_details(page, url):
                 raw_data[clean_title][clean_key] = value.strip().replace('\n', ' ')
     return raw_data
 
+
 # --- telegram sent not ---
 async def send_telegram_notification(device_name, device_url, image_path=None):
     """Sends a notification to a Telegram bot about a new device."""
@@ -186,7 +184,7 @@ async def send_telegram_notification(device_name, device_url, image_path=None):
     if image_path and os.path.exists(image_path):
         try:
             url = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendPhoto"
-            with open(image_path, 'rb' ) as photo:
+            with open(image_path, 'rb') as photo:
                 files = {'photo': photo}
                 data = {'chat_id': TELEGRAM_CHAT_ID, 'caption': message, 'parse_mode': 'Markdown'}
                 response = requests.post(url, data=data, files=files, timeout=30)
@@ -199,11 +197,12 @@ async def send_telegram_notification(device_name, device_url, image_path=None):
     try:
         url = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendMessage"
         data = {'chat_id': TELEGRAM_CHAT_ID, 'text': message, 'parse_mode': 'Markdown'}
-        response = requests.post(url, data=data, timeout=20 )
+        response = requests.post(url, data=data, timeout=20)
         response.raise_for_status()
         print(f"  -> ✉️ Telegram text notification sent for {device_name}")
     except Exception as inner_e:
         print(f"  -> ❌ Failed to send any notification to Telegram: {inner_e}")
+
 
 # --- MAIN EXECUTION ---
 async def run(playwright: Playwright):
@@ -238,22 +237,27 @@ async def run(playwright: Playwright):
 
                 base_filename = sanitize_filename(final_details.get('title', 'unknown_product'))
 
-                # *** CORRECTED FILE PATHS ***
-                # JSON file goes into the 'mobiles' folder
                 json_filepath = os.path.join(JSON_OUTPUT_FOLDER, base_filename + '.json')
-
-                # Image file goes into the 'images' folder
                 image_filepath = os.path.join(IMAGE_OUTPUT_FOLDER, base_filename + '.jpg')
 
-                # Trigger download and resize
                 download_and_resize_image(raw_details.get('image_url'), image_filepath)
 
-                # Save the JSON file
                 with open(json_filepath, 'w', encoding='utf-8') as f:
                     json.dump(final_details, f, indent=2, ensure_ascii=False)
 
-                save_processed_link(link)
+                # --- শুধুমাত্র এই লাইনটি পরিবর্তন করা হয়েছে ---
+                save_processed_link(link, final_details.get('title', 'unknown_product'))
+                # ------------------------------------------
+
                 print(f"  -> ✔  Successfully scraped and saved to '{json_filepath}'")
+
+                # টেলিগ্রাম নোটিফিকেশন পাঠান
+                await send_telegram_notification(
+                    device_name=final_details.get('title'),
+                    device_url=link,
+                    image_path=image_filepath
+                )
+
             except Exception as e:
                 print(f"  -> ❌ FAILED to scrape {link}. Error: {e}")
 
