@@ -7,6 +7,8 @@ from io import BytesIO
 import requests
 from PIL import Image
 from playwright.async_api import async_playwright, Playwright
+import subprocess
+
 
 # --- CONFIGURATION ---
 TARGET_URL = "https://www.mobiledokan.co/products/"
@@ -14,9 +16,30 @@ JSON_OUTPUT_FOLDER = 'mobiles'  # Folder for JSON files
 IMAGE_OUTPUT_FOLDER = 'images'  # Folder for Image files
 PROCESSED_LINKS_CSV = 'processed_links.csv'
 HEADLESS_MODE = True
+TELEGRAM_BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN" )
+TELEGRAM_CHAT_ID = os.getenv("TELEGRAM_CHAT_ID")
 
 
 # --- HELPER FUNCTIONS ---
+def git_commit_and_push(commit_message):
+    """Adds all new files, commits them, and pushes to the main branch."""
+    try:
+        # git add .
+        subprocess.run(["git", "add", "."], check=True)
+
+        # git commit -m "commit_message"
+        subprocess.run(["git", "commit", "-m", commit_message], check=True)
+
+        # git push origin main
+        subprocess.run(["git", "push", "origin", "main"], check=True)
+
+        print(f"✅ Successfully committed and pushed changes: '{commit_message}'")
+    except subprocess.CalledProcessError as e:
+        print(f"❌ Git command failed: {e}")
+        print("   -> It's possible there were no new changes to commit.")
+    except FileNotFoundError:
+        print("❌ Git command failed. Make sure Git is installed and in your system's PATH.")
+
 
 def download_and_resize_image(url, save_path, width=300):
     """Downloads an image from a URL, resizes it, and saves it."""
@@ -47,22 +70,29 @@ def download_and_resize_image(url, save_path, width=300):
 
 # (Other helper functions remain the same)
 def load_processed_links():
-    if not os.path.exists(PROCESSED_LINKS_CSV): return set()
+    """Loads the set of already scraped links from the CSV file."""
+    if not os.path.exists(PROCESSED_LINKS_CSV):
+        return set()
     with open(PROCESSED_LINKS_CSV, mode='r', newline='', encoding='utf-8') as f:
         reader = csv.reader(f)
         try:
             next(reader)
-            return {row[0] for row in reader}
-        except StopIteration:
+            return {row[1] for row in reader}
+        except (StopIteration, IndexError):
             return set()
 
 
-def save_processed_link(link):
+
+# saving process
+def save_processed_link(link, name):
+    """Appends a newly scraped link and name to the CSV file."""
     write_header = not os.path.exists(PROCESSED_LINKS_CSV)
     with open(PROCESSED_LINKS_CSV, mode='a', newline='', encoding='utf-8') as f:
         writer = csv.writer(f)
-        if write_header: writer.writerow(['processed_url'])
-        writer.writerow([link])
+        if write_header:
+            writer.writerow(['mobile_name', 'processed_url'])
+        writer.writerow([name, link])
+
 
 
 def sanitize_filename(name):
@@ -139,8 +169,43 @@ async def scrape_product_details(page, url):
                 raw_data[clean_title][clean_key] = value.strip().replace('\n', ' ')
     return raw_data
 
+# --- telegram sent not ---
+async def send_telegram_notification(device_name, device_url, image_path=None):
+    """Sends a notification to a Telegram bot about a new device."""
+    if not TELEGRAM_BOT_TOKEN or not TELEGRAM_CHAT_ID:
+        print("  -> ⚠️ Telegram token or chat ID not configured. Skipping notification.")
+        return
 
-# --- UPDATED MAIN EXECUTION ---
+    message = (
+        f"🔔 *Found New Devices (MobileDokan)!*\n\n"
+        f"📱 *Name:* {device_name}\n"
+        f"🔗 *Link:* {device_url}"
+    )
+
+    # Trying to send images
+    if image_path and os.path.exists(image_path):
+        try:
+            url = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendPhoto"
+            with open(image_path, 'rb' ) as photo:
+                files = {'photo': photo}
+                data = {'chat_id': TELEGRAM_CHAT_ID, 'caption': message, 'parse_mode': 'Markdown'}
+                response = requests.post(url, data=data, files=files, timeout=30)
+                response.raise_for_status()
+            print(f"  -> ✉️ Telegram notification with image sent for {device_name}")
+            return
+        except Exception as e:
+            print(f"  -> ❌ Failed to send photo to Telegram: {e}. Sending text only.")
+
+    try:
+        url = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendMessage"
+        data = {'chat_id': TELEGRAM_CHAT_ID, 'text': message, 'parse_mode': 'Markdown'}
+        response = requests.post(url, data=data, timeout=20 )
+        response.raise_for_status()
+        print(f"  -> ✉️ Telegram text notification sent for {device_name}")
+    except Exception as inner_e:
+        print(f"  -> ❌ Failed to send any notification to Telegram: {inner_e}")
+
+# --- MAIN EXECUTION ---
 async def run(playwright: Playwright):
     # Create the output folders if they don't exist
     os.makedirs(JSON_OUTPUT_FOLDER, exist_ok=True)
