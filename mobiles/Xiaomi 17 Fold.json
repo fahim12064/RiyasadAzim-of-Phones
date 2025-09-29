@@ -1,0 +1,68 @@
+{
+  "title": "Xiaomi 17 Fold",
+  "brand": "Xiaomi",
+  "category": "Smartphones",
+  "added_on": "27th, Sep, 2025",
+  "status": "RUMORED",
+  "announced_date": "Not announced yet",
+  "expected_release": "Not announced yet",
+  "price": {
+    "local_currency": "BDT",
+    "amount": 0,
+    "note": ""
+  },
+  "Camera": {
+    "Quad:": "50 MP 50 MP 10 MP 12 MP",
+    "Features:": "Dolby Vision HDR",
+    "Video:": "1080p@30/60fps",
+    "Single:": "16 MP Cover camera: 16 MP"
+  },
+  "Design": {
+    "Dimensions:": "-",
+    "Weight:": "-",
+    "Build:": "Glass front (folded), plastic front (unfolded), aluminum frame",
+    "SIM:": "Dual SIM (Nano-SIM, dual stand-by)",
+    "Others:": "IPX8 water resistant (up to 1.5m for 30 min)"
+  },
+  "Battery": {
+    "Type:": "Non-removable Li-Po",
+    "Capacity:": "5100 mAh"
+  },
+  "Display": {
+    "Type:": "Foldable LTPO AMOLED, 1B colors, 120Hz, HDR10+, Dolby Vision, 1700 nits (HBM), 3000 nits (peak)",
+    "Size:": "7.98 inches",
+    "Resolution:": "2224 x 2488 pixels",
+    "Features:": "Cover display: LTPO AMOLED, 68B colors, 120Hz, HDR10+, Dolby Vision, 1700 nits (HBM), 3000 nits (peak) 6.56 inches, 1080 x 2520 pixels, 21:9 ratio Scratch/drop-resistant glass"
+  },
+  "Cellular": {
+    "Technology:": "GSM / CDMA / HSPA / EVDO / LTE / 5G",
+    "2G bands:": "GSM 850 / 900 / 1800 / 1900 - SIM 1 & SIM 2 CDMA 800",
+    "3G bands:": "HSDPA 850 / 900 / 1700(AWS) / 1900 / 2100 CDMA2000 1xEV-DO",
+    "4G bands:": "1, 2, 3, 4, 5, 7, 8, 12, 17, 18, 19, 20, 26, 28, 34, 38, 39, 40, 41, 42",
+    "5G bands:": "1, 2, 3, 4, 5, 7, 8, 12, 17, 18, 19, 20, 26, 28, 34, 38, 39, 40, 41, 42",
+    "Speed:": "HSPA, LTE (CA), 5G"
+  },
+  "Hardware": {
+    "OS:": "Android 16",
+    "Chipset:": "Qualcomm SM8650-AB Snapdragon 8 Gen 3 (4 nm)",
+    "CPU:": "-",
+    "GPU:": "-",
+    "Card slot:": "No",
+    "Internal:": "256/512 GB 1TB",
+    "RAM:": "12/16 GB",
+    "Variant:": "12GB 256GB / 16GB 512GB / 16GB 1TB"
+  },
+  "Multimedia": {
+    "Loudspeaker:": "Yes, with stereo speakers",
+    "3.5mm jack:": "No 24-bit/192kHz Hi-Res & Hi-Res Wireless audio Snapdragon Sound"
+  },
+  "Connectivity & Features": {
+    "WLAN:": "Wi-Fi 802.11 a/b/g/n/ac/6e/7, dual-band (tri-band after future SW update), Wi-Fi Direct",
+    "Bluetooth:": "5.4, A2DP, LE, aptX HD, aptX Adaptive, LHDC",
+    "GPS:": "GPS (L1+L5), BDS (B1I+B1c+B2a), GALILEO (E1+E5a), QZSS (L1+L5), NavIC (L5), GLONASS",
+    "NFC:": "Yes",
+    "FM radio:": "No",
+    "USB:": "USB Type-C 3.2, OTG",
+    "Sensors:": "Fingerprint (side-mounted), accelerometer, gyro, proximity, compass, color spectrum, barometer Two-way satellite communication (calls, messages)"
+  }
+}

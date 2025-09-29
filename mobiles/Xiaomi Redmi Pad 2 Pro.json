@@ -1,0 +1,66 @@
+{
+  "title": "Xiaomi Redmi Pad 2 Pro",
+  "brand": "Xiaomi",
+  "category": "Tablets",
+  "added_on": "24th, Sep, 2025",
+  "status": "AVAILABLE",
+  "announced_date": "2025, September 24",
+  "expected_release": "2025, September 24",
+  "price": {
+    "local_currency": "BDT",
+    "amount": 4500000,
+    "note": "official price"
+  },
+  "Camera": {
+    "Single:": "8 MP, f/2.3, (wide), 1/4.0\", 1.12µm",
+    "Features:": "Color spectrum sensor, LED flash, HDR",
+    "Video:": "1080p@30fps"
+  },
+  "Design": {
+    "Dimensions:": "279.8 x 181.7 x 7.5 mm (11.02 x 7.15 x 0.30 in)",
+    "Weight:": "610 g (1.34 lb)",
+    "Build:": "Glass front (Gorilla Glass 3), aluminum frame, aluminum back",
+    "SIM:": "No",
+    "Others:": "Stylus support (magnetic)"
+  },
+  "Battery": {
+    "Type:": "Non-removable Li-Po",
+    "Capacity:": "12000 mAh",
+    "Charging:": "33W wired, PD3.0, QC3+ 27W reverse wired"
+  },
+  "Display": {
+    "Type:": "IPS LCD, 68B colors, 120Hz, Dolby Vision, 600 nits (HBM)",
+    "Size:": "12.1 inches, 424.5 cm2 (~83.5% screen-to-body ratio)",
+    "Resolution:": "1600 x 2560 pixels, 16:10 ratio (~249 ppi density)",
+    "Protection:": "Mohs level 6",
+    "Features:": "Matte glass (optional)"
+  },
+  "Cellular": {
+    "Technology:": "No cellular connectivity",
+    "2G bands:": "N/A",
+    "3G bands:": "N/A",
+    "4G bands:": "N/A"
+  },
+  "Hardware": {
+    "OS:": "Android 15, HyperOS 2",
+    "Chipset:": "Qualcomm SM7635 Snapdragon 7s Gen 4 (4 nm)",
+    "CPU:": "Octa-core (1x2.7 GHz Cortex-A720 & 3x2.4 GHz Cortex-A720 & 4x1.8 GHz Cortex-A520)",
+    "GPU:": "Adreno 810",
+    "Card slot:": "microSDXC (dedicated slot)",
+    "Internal:": "128/256 GB",
+    "RAM:": "6/8 GB",
+    "Variant:": "6GB 128GB / 8GB 256GB"
+  },
+  "Multimedia": {
+    "Loudspeaker:": "Yes, with stereo speakers, Dolby Atmos (4 speakers)",
+    "3.5mm jack:": "No 24-bit/192kHz Hi-Res audio"
+  },
+  "Connectivity & Features": {
+    "WLAN:": "Wi-Fi 802.11 a/b/g/n/a/6, dual-band, Wi-Fi Direct",
+    "Bluetooth:": "5.2, A2DP, LE, aptX HD, aptX Adaptive",
+    "NFC:": "No",
+    "FM radio:": "No",
+    "USB:": "USB Type-C 2.0, OTG",
+    "Sensors:": "Accelerometer, gyro, proximity (accessories only), compass Circle to Search"
+  }
+}
