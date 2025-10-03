@@ -1,0 +1,64 @@
+{
+  "title": "Honor X5c Plus",
+  "brand": "Honor",
+  "category": "Smartphones",
+  "added_on": "24th, Sep, 2025",
+  "status": "AVAILABLE",
+  "announced_date": "2025, September 24",
+  "expected_release": "2025, September 24",
+  "price": {
+    "local_currency": "BDT",
+    "amount": 1200000,
+    "note": "official price"
+  },
+  "Camera": {
+    "Single:": "5 MP, f/2.2, (wide)",
+    "Features:": "LED flash, HDR, panorama",
+    "Video:": "1080p@30fps"
+  },
+  "Design": {
+    "Dimensions:": "167 x 77 x 7.9 mm (6.57 x 3.03 x 0.31 in)",
+    "Weight:": "186 g (6.56 oz)",
+    "SIM:": "Nano-SIM + Nano-SIM"
+  },
+  "Battery": {
+    "Type:": "Non-removable Li-Po",
+    "Capacity:": "5620 mAh",
+    "Charging:": "15W wired"
+  },
+  "Display": {
+    "Type:": "TFT LCD, 90Hz",
+    "Size:": "6.74 inches, 109.7 cm2 (~85.3% screen-to-body ratio)",
+    "Resolution:": "720 x 1600 pixels, 20:9 ratio (~260 ppi density)"
+  },
+  "Cellular": {
+    "Technology:": "GSM / HSPA / LTE",
+    "2G bands:": "GSM 850 / 900 / 1800 / 1900",
+    "3G bands:": "HSDPA 850 / 900 / 1700(AWS) / 1900 / 2100",
+    "4G bands:": "LTE",
+    "Speed:": "HSPA, LTE"
+  },
+  "Hardware": {
+    "OS:": "Android 15, MagicOS 9",
+    "Chipset:": "Mediatek Helio G81 (12 nm)",
+    "CPU:": "Octa-core (2x2.0 GHz Cortex-A75 & 6x1.7 GHz Cortex-A55)",
+    "GPU:": "Mali-G52 MC2",
+    "Card slot:": "microSDXC (uses shared SIM slot)",
+    "Internal:": "128 GB",
+    "RAM:": "4 GB",
+    "Variant:": "4GB 128GB"
+  },
+  "Multimedia": {
+    "Loudspeaker:": "Yes",
+    "3.5mm jack:": "Yes"
+  },
+  "Connectivity & Features": {
+    "WLAN:": "Wi-Fi 802.11 a/b/g/n/ac, dual-band, Wi-Fi Direct",
+    "Bluetooth:": "5.1, A2DP, LE",
+    "GPS:": "GPS, GLONASS, GALILEO, BDS",
+    "NFC:": "No",
+    "FM radio:": "Yes",
+    "USB:": "USB Type-C 2.0, OTG",
+    "Sensors:": "Fingerprint (side-mounted), accelerometer, proximity"
+  }
+}
