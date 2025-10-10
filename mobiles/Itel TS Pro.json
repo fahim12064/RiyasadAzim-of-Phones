@@ -1,0 +1,65 @@
+{
+  "title": "Itel TS Pro",
+  "brand": "Itel",
+  "category": "Smartphones",
+  "added_on": "10th, Oct, 2025",
+  "status": "AVAILABLE",
+  "announced_date": "2025, October",
+  "expected_release": "2025, October",
+  "price": {
+    "local_currency": "BDT",
+    "amount": 800000,
+    "note": "official price"
+  },
+  "Camera": {
+    "Single:": "5 MP",
+    "Features:": "LED flash",
+    "Video:": "Yes"
+  },
+  "Design": {
+    "Dimensions:": "165 x 76.7 x 9 mm (6.50 x 3.02 x 0.35 in)",
+    "Weight:": "188 g (6.63 oz)",
+    "Build:": "Glass front, plastic frame, plastic back",
+    "SIM:": "Dual SIM"
+  },
+  "Battery": {
+    "Type:": "Non-removable Li-Po",
+    "Capacity:": "4000 mAh",
+    "Charging:": "10W wired"
+  },
+  "Display": {
+    "Type:": "IPS LCD",
+    "Size:": "6.52 inches, 102.6 cm2 (~81.1% screen-to-body ratio)",
+    "Resolution:": "720 x 1600 pixels, 20:9 ratio (~269 ppi density)"
+  },
+  "Cellular": {
+    "Technology:": "GSM / HSPA / LTE",
+    "2G bands:": "GSM 850 / 900 / 1800 / 1900",
+    "3G bands:": "HSDPA 850 / 900 / 2100",
+    "4G bands:": "LTE",
+    "Speed:": "HSPA, LTE"
+  },
+  "Hardware": {
+    "OS:": "Android 14",
+    "Chipset:": "Unisoc T603",
+    "CPU:": "Octa-core",
+    "GPU:": "-",
+    "Card slot:": "microSDXC",
+    "Internal:": "64GB",
+    "RAM:": "4 GB",
+    "Variant:": "4GB 64GB"
+  },
+  "Multimedia": {
+    "Loudspeaker:": "Yes",
+    "3.5mm jack:": "Yes"
+  },
+  "Connectivity & Features": {
+    "WLAN:": "Yes",
+    "Bluetooth:": "Yes",
+    "GPS:": "Yes",
+    "NFC:": "No",
+    "FM radio:": "Unspecified",
+    "USB:": "USB Type-C 2.0",
+    "Sensors:": "Fingerprint (side-mounted); unspecified sensors"
+  }
+}
